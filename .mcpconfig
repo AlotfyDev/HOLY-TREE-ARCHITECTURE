@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "holy-tree-mcp": {
+      "command": "python",
+      "args": ["HolyTree_MCP/holy_tree_server.py"],
+      "env": {
+        "HOLY_TREE_PATH": "${workspaceFolder}/ROMILLM_Architecture/ProjectStructure.md"
+      },
+      "description": "🏛️ SUPREME ARCHITECTURAL AUTHORITY - Holy Tree MCP governs all structural decisions and entity classifications"
+    },
+    "documentation-mcp": {
+      "command": "python",
+      "args": ["DocumentationMCP_Server/documentation_server.py"],
+      "env": {
+        "DOC_ROOT": "${workspaceFolder}/ROMILLM_Architecture",
+        "KG_SERVER": "holy-tree-mcp",
+        "UPDATE_INTERVAL": "5"
+      },
+      "description": "📄 Real-time hyperlinked entity documentation system"
+    },
+    "graph-knowledge-server": {
+      "command": "python",
+      "args": ["-m", "github.com/modelcontextprotocol/servers/tree/main/src/memory"],
+      "env": {},
+      "description": "🧠 Knowledge graph and entity relationship management"
+    },
+    "graph-rag-server": {
+      "command": "node",
+      "args": ["${workspaceFolder}/GraphRagMcpServer/dist/index.js"],
+      "env": {
+        "CONFIG_PATH": "${workspaceFolder}/config.toml"
+      },
+      "description": "🔍 Enhanced GraphRAG with semantic expansion"
+    }
+  }
+}

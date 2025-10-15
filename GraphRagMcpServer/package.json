@@ -1,0 +1,44 @@
+{
+  "name": "graph-rag-mcp-server",
+  "version": "1.0.0",
+  "description": "Graph-Based RAG MCP Server for intelligent knowledge retrieval and reasoning from software documentation and trading domain knowledge",
+  "main": "build/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "node build/index.js",
+    "dev": "tsc --watch",
+    "clean": "rm -rf build && rm -rf knowledge-base && rm -rf data"
+  },
+  "keywords": [
+    "mcp",
+    "rag",
+    "graph-rag",
+    "knowledge-graph",
+    "software-development",
+    "trading",
+    "cognitive-assistance",
+    "entity-relationship"
+  ],
+  "author": "Cognitive Graph-RAG Team",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "faiss-node": "^0.5.1",
+    "better-sqlite3": "^9.4.3",
+    "glob": "^10.3.10",
+    "winston": "^3.13.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/uuid": "^9.0.7",
+    "@types/better-sqlite3": "^7.6.9",
+    "@types/glob": "^8.1.0",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

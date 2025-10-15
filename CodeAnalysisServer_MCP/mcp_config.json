@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "code-analysis-server": {
+      "command": "python",
+      "args": [
+        "D:/PythonTrader/MQL5Rag/CodeAnalysisServer_MCP/mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:/PythonTrader/MQL5Rag/CodeAnalysisServer_MCP",
+        "MEMORY_LIMIT": "4GB",
+        "TIMEOUT": "60s"
+      },
+      "description": "Multi-language code analysis MCP server for ROMILLM entity extraction"
+    }
+  }
+}

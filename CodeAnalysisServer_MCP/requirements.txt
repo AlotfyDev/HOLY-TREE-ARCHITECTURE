@@ -1,0 +1,20 @@
+# CodeAnalysisServer MCP Dependencies
+# Core Python libraries for MCP server
+asyncio
+json
+pathlib
+typing
+logging
+
+# Additional libraries for enhanced code analysis (optional but recommended)
+# These would enable more sophisticated parsing and language detection
+# tree-sitter         # For AST parsing
+# tree-sitter-cpp     # C/C++ parser
+# tree-sitter-python  # Python parser
+# tree-sitter-javascript  # JavaScript parser
+# pyright            # TypeScript support (if needed)
+
+# For production deployment:
+# mcp                    # Official MCP library (when available)
+# fastapi               # HTTP server support (optional)
+# uvicorn               # ASGI server (optional)
