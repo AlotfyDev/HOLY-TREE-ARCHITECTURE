@@ -246,99 +246,35 @@ Memory Pools → SIMD Operations → Lock-Free Patterns → Performance Benchmar
 ⚖️🕍🌳✨ Ready for next architectural command.
 ```
 
-## 🎯 Problem Statement
 
-In modern algorithmic trading and financial application development, developers frequently face these challenges:
 
-### ❌ Common Issues
-- **Manual asset management** - Hard to maintain updated lists of financial instruments
-- **Inconsistent asset referencing** - No standardized way to reference assets across different systems
-- **Time-consuming enumeration** - Manual creation and maintenance of asset enums
-- **Data export limitations** - Difficulty exporting asset data in usable formats
-- **Asset type detection** - No automated way to classify financial instruments
+## 🏗️ **HOLY TREE Architecture Overview**
 
-### ✅ Our Solution
-The MQL5 Financial Assets Indexer solves these problems by providing:
+The HOLY TREE ARCHITECTURE is a **sacred multi-tier framework** that enforces clean architecture principles through mechanical quality gates. This framework provides the foundation for building **production-ready cognitive AI systems** with guaranteed architectural purity.
 
-- **Automated asset discovery** and cataloging
-- **Dynamic enum generation** with consistent naming
-- **Multi-format data export** (JSON, C Struct, Complete Schema)
-- **Intelligent asset classification** with 5 asset types
-- **Real-time statistics** and asset analytics
+### Sacred Architectural Layers
 
-## ✨ Key Features
+THE FOUR SACRED LAYERS (Mechanically Enforced):
+1. **🛠️ Toolbox Layer**: Stateless pure functions
+2. **📦 PODs Layer**: Configuration DTO contracts
+3. **🏗️ Stateful Layer**: Business logic implementation
+4. **🔗 Composition Layer**: High-level orchestrations
 
-### 🔍 **Automated Asset Discovery**
-- Scans all available symbols in the MetaTrader 5 market
-- Automatically detects and catalogs financial instruments
-- Real-time asset count and availability tracking
+### Core Framework Guarantees
 
-### 📊 **Dynamic Enumeration System**
-- Auto-generates `ENUM_MARKET_SYMBOLS` for all discovered assets
-- Consistent naming convention with `SYMBOL_` prefix
-- Maintains serial number mapping for easy reference
+#### Architectural Purity Enforcement
+- ✅ **Quality Gates**: Mechanical verification of 4-layer compliance
+- ✅ **Entity Classification**: All entities blessed by HOLY TREE MCP
+- ✅ **Documentation Hyperlinking**: Automatic NLP linking through Documentation MCP
+- ✅ **Cross-Language Contracts**: ABI-stable POD DTOs
 
-### 🎨 **Multi-Format Export**
-- **JSON Export**: Schema-compliant JSON with metadata and statistics
-- **C Structure Export**: Ready-to-use C/C++ structures
-- **Complete Schema Export**: Language-agnostic schema for cross-platform use
+#### Framework Infrastructure
+- ✅ **MCP Ecosystem**: 4 servers coordinating development workflows
+- ✅ **Build Pipeline**: CMake + VCPKG + MSVC 2022
+- ✅ **Testing Framework**: Pytest integration with performance benchmarking
+- ✅ **Documentation System**: Hyperlinked Mermaid diagrams
 
-### 🏷️ **Intelligent Asset Classification**
-- **FOREX**: Currency pairs (EURUSD, GBPJPY, etc.)
-- **COMMODITIES**: Precious metals, energy, agriculture (XAU, OIL, CORN, etc.)
-- **CRYPTO**: Digital currencies (BTC, ETH, ADA, etc.)
-- **STOCKS**: Equity instruments with exchange codes
-- **INDICES**: Market indices (SPX, NASDAQ, FTSE, etc.)
-
-### 📈 **Advanced Analytics**
-- Asset type distribution statistics
-- Total asset count tracking
-- Export timestamp and version control
-- Schema compliance validation
-
-## 🏗️ Architecture
-
-### Core Components
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    CIndexer Class                           │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │              Private Members                        │   │
-│  ├─────────────────────────────────────────────────────┤   │
-│  │  • CHashMap<string, SFinancialAsset*> m_assetsMap   │   │
-│  │  • CArrayObj m_assetsArray                          │   │
-│  │  • int m_currentSerial                              │   │
-│  │  • string m_exportSchema                            │   │
-│  └─────────────────────────────────────────────────────┘   │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │              Public Methods                         │   │
-│  ├─────────────────────────────────────────────────────┤   │
-│  │  • Constructor & Initialization                     │   │
-│  │  • Asset Management (Add, Find, Search)             │   │
-│  │  • Data Export (JSON, C Struct, Schema)            │   │
-│  │  • Asset Classification & Analytics                │   │
-│  └─────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Data Structures
-
-#### SFinancialAsset Structure
-```cpp
-struct SFinancialAsset {
-    int serialNumber;           // Unique sequential identifier
-    string assetName;           // Original symbol name
-    string normalizedName;      // Normalized enum-friendly name
-    ENUM_MARKET_SYMBOLS ESymbol; // Corresponding enum value
-    ENUM_ASSET_TYPE assetType;  // Asset classification
-    datetime timestamp;         // Creation/update timestamp
-};
-```
-
-## 🚀 Quick Start
+## 🚀 **Quick Start - Sacred Framework Initiation**
 
 ### Installation
 
