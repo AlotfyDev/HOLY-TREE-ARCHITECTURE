@@ -1,4 +1,0 @@
-D:/PythonTrader/MQL5Rag/build/CMakeFiles/TradingRagSystem.dir
-D:/PythonTrader/MQL5Rag/build/CMakeFiles/INSTALL.dir
-D:/PythonTrader/MQL5Rag/build/CMakeFiles/ALL_BUILD.dir
-D:/PythonTrader/MQL5Rag/build/CMakeFiles/ZERO_CHECK.dir

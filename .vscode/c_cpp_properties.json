@@ -28,8 +28,8 @@
             "cStandard": "c99",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64",
-            "configurationProvider": "ms-vscode.cmake-tools",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+            "configurationProvider": "ms-vscode.cmake-tools"
+            // Removed compileCommands until build directory can generate it with CMAKE_EXPORT_COMPILE_COMMANDS=ON
         },
         {
             "name": "HOLY TREE Release (Optimized)", // ⚡ HOLY TREE Production Configuration
