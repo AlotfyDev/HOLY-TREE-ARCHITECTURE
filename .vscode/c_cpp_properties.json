@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "HOLY TREE C++ (ROMILLM Architecture)", // 🏗️ HOLY TREE C++ Compilation Configuration
+            "name": "HOLY TREE C++ (ROMILLM Architecture)", // 🏗️ HOLY TREE C++ Compilation Configuration (Custom CMake + VCPKG)
             "includePath": [
                 "${workspaceFolder}/**", // HOLY TREE Framework Include Path
                 "${workspaceFolder}/build/**", // Build-generated includes
@@ -9,6 +9,7 @@
                 "${workspaceFolder}/HolyTree_MCP/**", // HolyTree MCP Server Headers
                 "${workspaceFolder}/CodeAnalysisServer_MCP/**", // Code Analysis MCP Headers
                 "${workspaceFolder}/DocumentationMCP_Server/**", // Documentation MCP Headers
+                "C:/vcpkg/bootstrap-vcpkg.bat/installed/x64-windows/include/**", // VCPKG Libraries
                 "C:/Users/${env:USERNAME}/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include/**",
                 "C:/Users/${env:USERNAME}/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Libraries/**"
             ],
@@ -20,9 +21,10 @@
                 "_WINDOWS", // Windows Platform
                 "__cplusplus", // C++ Language Mode
                 "CMAKE_BUILD", // CMake Build Environment
-                "_MBCS" // Multi-byte Character Set
+                "_MBCS", // Multi-byte Character Set
+                "VCPKG_TOOLCHAIN" // VCPKG Toolchain Integration
             ],
-            "compilerPath": "C:/Program Files/CMake/bin/cmake.exe",
+            "compilerPath": "C:\\cmake-4.1.0-rc4-windows-x86_64\\bin\\cmake.exe", // 🏗️ Your Custom CMake Path
             "cStandard": "c99",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64",
