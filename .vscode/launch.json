@@ -1,0 +1,42 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+       {
+           "name": "MQL5 Debug Current File",
+           "type": "cppdbg",
+           "request": "launch",
+           "program": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+           "args": [
+               "/debug:${file}",
+               "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
+               "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include"
+           ],
+           "stopAtEntry": false,
+           "cwd": "${workspaceFolder}",
+           "environment": [],
+           "externalConsole": true,
+           "MIMode": "gdb",
+           "miDebuggerPath": "C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/gdb.exe",
+           "setupCommands": [
+               {
+                   "description": "Enable pretty-printing for gdb",
+                   "text": "-enable-pretty-printing",
+                   "ignoreFailures": true
+               }
+           ],
+           "preLaunchTask": "MQL5 Compile"
+       },
+       {
+           "name": "MQL5 Launch MetaEditor",
+           "type": "cppdbg",
+           "request": "launch",
+           "program": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+           "args": [],
+           "stopAtEntry": false,
+           "cwd": "C:/Program Files/MetaTrader 5 EXNESS",
+           "environment": [],
+           "externalConsole": true,
+           "MIMode": "gdb"
+       }
+   ]
+}

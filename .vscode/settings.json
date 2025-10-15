@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.mqh": "cpp",
+        "*.mql": "cpp",
+        "*.mq5": "cpp",
+        "*.mq4": "cpp"
+    },
+    
+    "C_Cpp.default.configurationProvider": "llvm-vs-code-extensions.vscode-clangd",
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.dimInactiveRegions": false,
+    "C_Cpp.loggingLevel": "Information"
+}

@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "MQL5",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include/**",
+                
+                "C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Libraries/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "WIN64",
+                "_WINDOWS",
+                "_MBCS"
+            ],
+            "compilerPath": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+            "cStandard": "c99",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,10 @@
+^D:\PYTHONTRADER\MQL5RAG\BUILD\CMAKEFILES\357C5493DE8A70CC98791276CFB89C1C\GENERATE.STAMP.RULE
+setlocal
+C:\cmake-4.1.0-rc4-windows-x86_64\bin\cmake.exe -SD:/PythonTrader/MQL5Rag -BD:/PythonTrader/MQL5Rag/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/PythonTrader/MQL5Rag/build/TradingRagSystem.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

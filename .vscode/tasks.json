@@ -1,0 +1,75 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MQL5 Compile",
+            "type": "shell",
+            "command": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+            "args": [
+                "/compile:${file}",
+                "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
+                "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include",
+                "/log"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                {
+                    "pattern": [
+                        {
+                            "regexp": "^(.*)\\((\\d+)\\,(\\d+)\\)\\s*:\\s*(error|warning|note)\\s*:\\s*(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "MQL5 Compile All",
+            "type": "shell",
+            "command": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+            "args": [
+                "/compile:all",
+                "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
+                "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include",
+                "/log"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "MQL5 Validate Syntax",
+            "type": "shell",
+            "command": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+            "args": [
+                "/validate:${file}",
+                "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
+                "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}
