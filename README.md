@@ -274,374 +274,338 @@ THE FOUR SACRED LAYERS (Mechanically Enforced):
 - ✅ **Testing Framework**: Pytest integration with performance benchmarking
 - ✅ **Documentation System**: Hyperlinked Mermaid diagrams
 
-## 🚀 **Quick Start - Sacred Framework Initiation**
+## 🎯 **MCP Ecosystem Activation - Framework Development Initiation**
 
-### Installation
+The HOLY TREE ARCHITECTURE uses an integrated MCP (Model Context Protocol) ecosystem for coordinated development. All components follow the MCP-first workflow where development activities are facilitated through MCP server coordination.
 
-1. **Copy Files to MetaTrader 5**
+### Installation - Sacred Framework Development
+
+1. **Clone the HOLY TREE ARCHITECTURE**
    ```bash
-   # Copy to your MetaTrader 5 installation
-   cp -r AssetsSymbolsIndex/ "C:\Users\YourUser\AppData\Roaming\MetaQuotes\Terminal\YourTerminal\MQL5\Libraries\"
+   git clone https://github.com/AlotfyDev/HOLY-TREE-ARCHITECTURE.git
+   cd HOLY-TREE-ARCHITECTURE
    ```
 
-2. **Include in Your Project**
-   ```mql
-   #include "AssetsSymbolsIndex/Indexer/CIndexer.mqh"
-
-   // Create indexer instance
-   CIndexer indexer();
+2. **Set Up MCP Ecosystem**
+   ```bash
+   # Install MCP server dependencies
+   cd HolyTree_MCP && pip install -r requirements.txt
+   cd ../DocumentationMCP_Server && pip install -r requirements.txt
+   cd ../CodeAnalysisServer_MCP && pip install -r requirements.txt
+   cd ../GraphRagMcpServer && npm install
    ```
 
-3. **Initialize Asset Database**
-   ```mql
-   // Constructor automatically initializes all available assets
-   CIndexer indexer();
-
-   // Access asset statistics
-   indexer.PrintStatistics();
+3. **Initialize Sacred Development Environment**
+   ```bash
+   # Configure VSCode for framework development
+   code .vscode/settings.json  # Apply sacred workspace settings
    ```
 
-### Basic Usage Example
+4. **Start MCP Servers for Development Guidance**
+   ```bash
+   # Start Holy Tree MCP for entity classification
+   python HolyTree_MCP/holy_tree_server.py
 
-```mql
-//+------------------------------------------------------------------+
-//| Example Expert Advisor using CIndexer                           |
-//+------------------------------------------------------------------+
-#include "AssetsSymbolsIndex/Indexer/CIndexer.mqh"
+   # Start Documentation MCP for hyperlinking
+   python DocumentationMCP_Server/documentation_server.py
 
-CIndexer indexer;
+   # Start GraphRAG MCP for cognitive intelligence
+   cd GraphRagMcpServer && npm start
+   ```
 
-//+------------------------------------------------------------------+
-//| Expert initialization function                                   |
-//+------------------------------------------------------------------+
-int OnInit() {
-    // Indexer automatically discovers and catalogs all market assets
-    Print("Asset indexer initialized with ", indexer.GetAssetCount(), " assets");
+### Basic Framework Usage - HOLY TREE Development Workflow
 
-    // Export asset data in different formats
-    string jsonData = indexer.ExportToJSON();
-    string cStruct = indexer.ExportToCStruct();
-    string schema = indexer.ExportCompleteSchema();
+```python
+# Import sacred components through factory methods
+from holy_tree.core.orchestration import IntentClassifier
 
-    return(INIT_SUCCEEDED);
+# Create components using static factory methods (Commandment VI)
+classifier = IntentClassifier.create_default({
+    'nlp_model': 'en_core_web_md',
+    'knowledge_bases': ['domain.ttl', 'sz_er/'],
+    'mcp_endpoints': ['holy_tree', 'documentation', 'graphrag']
+})
+
+# Process queries through multi-tier orchestration
+result = classifier.classify_intent("Build knowledge graph from Strwythura data")
+print(f"Intent Category: {result.intent_type}")
+print(f"Recommended Pipeline: {result.pipeline_id}")
+```
+
+## 📖 **Integration Examples - HOLY TREE in Action**
+
+### Example 1: Framework Component Construction
+
+```python
+# ✅ CORRECT: Using factory methods and DTOs (HOLY TREE laws)
+
+from romillm.ingestion.pipeline import WebDataAcquirer
+from romillm.knowledge_graph.processor import GraphConstructor
+from romillm.orchestration.router import IntentRouter
+
+# Step 1: Create configuration DTOs (Layer 2)
+web_config = WebDataAcquirerConfig_DTO(
+    crawling_interval=300,  # 5 minutes
+    user_agent="ROMILLM Cognitive Agent/1.0",
+    politeness_delay=1.0,
+    max_pages_per_domain=1000
+)
+
+graph_config = GraphConstructorConfig_DTO(
+    entity_extraction_threshold=0.85,
+    relationship_weight_min=0.6,
+    text_rank_iterations=50,
+    community_detection_algorithm='louvain'
+)
+
+# Step 2: Use static factory methods (Commandment VI)
+web_acquirer = WebDataAcquirer.create_with_config(web_config)
+graph_constructor = GraphConstructor.create_with_config(graph_config)
+intent_router = IntentRouter.create_default()
+
+# Step 3: Compose high-level workflow (Layer 4)
+knowledge_builder = KnowledgeGraphBuilder(
+    web_acquirer=web_acquirer,
+    graph_constructor=graph_constructor,
+    intent_router=intent_router
+)
+```
+
+### Example 2: Cross-Language Contract Usage
+
+```cpp
+// C++ implementation following HOLY TREE laws
+#include <romillm/orchestration/IntentClassifier.hpp>
+
+// Use factory method for controlled instantiation (Commandment VI)
+auto classifier = IntentClassifier::Create(IntentClassifierConfig{
+    .nlpModelPath = "models/en_core_web_md",
+    .knowledgeBasePaths = {"domain.ttl", "sz_er/"},
+    .mcpServerEndpoints = {"holy_tree", "documentation", "graphrag"}
+});
+
+// Process with error handling
+Result<IntentClassificationResult> result = classifier->ClassifyIntent(
+    "Build knowledge graph from Strwythura data"
+);
+
+if (result.IsSuccess()) {
+    auto& classified = result.GetValue();
+    std::cout << "Intent: " << classified.intent_type << std::endl;
+    std::cout << "Confidence: " << classified.confidence_score << std::endl;
 }
-
-//+------------------------------------------------------------------+
-//| Find specific assets                                             |
-//+------------------------------------------------------------------+
-void ExampleUsage() {
-    // Find asset by name
-    SFinancialAsset* eurUsd = indexer.FindAssetByName("EURUSD");
-    if(eurUsd) {
-        Print("EURUSD Serial: ", eurUsd.serialNumber);
-        Print("EURUSD Type: ", eurUsd.assetType);
-    }
-
-    // Find asset by enum
-    SFinancialAsset* asset = indexer.FindAssetByEnum(SYMBOL_EURUSD);
-}
 ```
 
-## 📖 Usage Examples
+### Example 3: MCP Ecosystem Coordination
 
-### Example 1: Asset Discovery and Statistics
+```python
+# HOLY TREE ecosystem using MCP coordination
+from mcp.ecosystem.coordinator import MCPServerCoordinator
 
-```mql
-CIndexer indexer();
+# Configure MCP servers (Framework coordination)
+coordinator = MCPServerCoordinator({
+    'holy_tree': {'host': 'localhost', 'port': 3001},
+    'documentation': {'host': 'localhost', 'port': 3002},
+    'graphrag': {'host': 'localhost', 'port': 3003},
+    'code_analysis': {'host': 'localhost', 'port': 3004}
+})
 
-int OnInit() {
-    // Get comprehensive statistics
-    indexer.PrintStatistics();
+# Entity discovery workflow (MCP-first approach)
+entity_name = "GraphRAG"
+entity_type = coordinator.classify_entity_through_holy_tree(entity_name)
+# Returns: {'type': 'core_object', 'ascii_tree': true, 'project_structure': true}
 
-    // Output:
-    // === Index Statistics ===
-    // Total Assets: 2847
-    // Forex Pairs: 128
-    // Commodities: 23
-    // Cryptocurrencies: 156
-    // Stocks: 2340
-    // Indices: 200
+# Documentation hyperlinking (Documentation MCP)
+coordinator.hyperlink_references_to_entity(entity_name, [
+    "docs/README.md", "src/graphrag/",
+    "ROMILLM_Architecture/Software_Architecture_Overview.md"
+])
 
-    return(INIT_SUCCEEDED);
-}
+# Quality gate enforcement (CodeAnalysis MCP)
+violations = coordinator.analyze_architecture_quality([
+    "src/", "test/", "ROMILLM_Architecture/"
+])
+print(f"Architecture violations found: {len(violations)}")
 ```
 
-### Example 2: Dynamic Enum Generation
+### Example 4: Performance-Optimized Operations
 
-```mql
-CIndexer indexer();
+```cpp
+// Performance-first implementation with memory pools
+#include <romillm/infrastructure/memory_pool.hpp>
 
-string enumDefinition = indexer.GenerateEnums();
-// Generates:
-// enum ENUM_MARKET_SYMBOLS {
-//     SYMBOL_UNKNOWN = 0,
-//     SYMBOL_EURUSD = 1,
-//     SYMBOL_GBPUSD = 2,
-//     SYMBOL_USDJPY = 3,
-//     // ... all discovered symbols
-// };
+auto& pool = MemoryPoolManager::GetInstance();
+
+// Allocate from pre-configured memory pools
+auto entity_buffer = pool.AllocateEntityBuffer(1000);  // Pre-allocated entities
+auto text_buffer = pool.AllocateTextBuffer(1MB);       // Pre-allocated texts
+auto vector_buffer = pool.AllocateVectorBuffer(10000); // Pre-allocated vectors
+
+// SIMD-accelerated operations
+TextVectorizer vectorizer;
+vectorizer.ProcessBatchSIMD(text_buffer, entity_buffer, vector_buffer);
+
+// Lock-free operations where possible
+GraphRanker ranker;
+ranker.ComputePageRankLockfree(entity_buffer, 0.85f, 100);
 ```
 
-### Example 3: JSON Export with Full Schema
+## 🔧 **API Reference - HOLY TREE Framework Interfaces**
 
-```mql
-CIndexer indexer();
+### Core Orchestration Factory Methods
 
-string jsonSchema = indexer.ExportToJSON();
-// Exports comprehensive JSON including:
-// - Asset metadata and statistics
-// - Enum definitions
-// - Asset type breakdowns
-// - Schema compliance information
+#### `IntentClassifier::Create()`
+- **Purpose**: Creates intent classification engine with MCP coordination
+- **Parameters**: Factory DTO with NLP models and knowledge base paths
+- **Returns**: Result<T> with configured classifier instance
+- **Quality Gates**: Validated entity classifications and MCP connectivity
+
+#### `WebDataAcquirer::Create()`
+- **Purpose**: Creates web data acquisition pipeline with Strwythura integration
+- **Parameters**: Configuration DTO with crawling parameters
+- **Returns**: Result<T> with configured acquirer instance
+- **Quality Gates**: Valid Strwythura configuration and connection
+
+#### `GraphConstructor::Create()`
+- **Purpose**: Creates knowledge graph construction engine
+- **Parameters**: Algorithm configuration DTO
+- **Returns**: Result<T> with configured constructor instance
+- **Quality Gates**: Valid graph construction parameters
+
+### MCP Server Interfaces
+
+#### Holy Tree MCP API
+```python
+# Entity classification and ASCII tree management
+response = holy_tree_mcp.classify_entity("GraphRAG")
+response = holy_tree_mcp.add_to_ascii_tree("1.2.2.x.x", "GraphRAG Component")
+response = holy_tree_mcp.validate_architecture_integrity()
 ```
 
-### Example 4: Cross-Language Schema Export
-
-```mql
-CIndexer indexer();
-
-string completeSchema = indexer.ExportCompleteSchema();
-// Generates complete schema for:
-// - C/C++ structures
-// - C# enums and classes
-// - Python classes
-// - JavaScript objects
-// - Usage examples for each language
+#### Documentation MCP API
+```python
+# NLP-powered hyperlinking and reference management
+response = docs_mcp.hyperlink_entity("GraphRAG", ["README.md", "docs/"])
+response = docs_mcp.find_related_entities("cognitive intelligence")
+response = docs_mcp.validate_documentation_completeness()
 ```
 
-## 🔧 API Reference
-
-### Constructor
-```mql
-CIndexer()  // Automatically initializes asset discovery
+#### GraphRAG MCP API
+```python
+# Cognitive intelligence and DSPy orchestration
+response = graphrag_mcp.process_query("Build knowledge graph algorithms")
+response = graphrag_mcp.optimize_retrieval_pipeline(context)
+response = graphrag_mcp.validate_semantic_expansion()
 ```
 
-### Asset Management Methods
+## 📊 **Framework Workflow Diagrams**
 
-#### `bool InitializeAssets()`
-- **Description**: Scans and catalogs all available market symbols
-- **Returns**: `true` if successful, `false` otherwise
-
-#### `bool AddAsset(string symbolName)`
-- **Description**: Adds a specific asset to the index
-- **Parameters**: `symbolName` - Symbol to add (e.g., "EURUSD")
-- **Returns**: `true` if added, `false` if already exists
-
-#### `SFinancialAsset* FindAssetByName(string name)`
-- **Description**: Finds asset by symbol name
-- **Returns**: Pointer to `SFinancialAsset` or `NULL` if not found
-
-#### `SFinancialAsset* FindAssetByEnum(ENUM_MARKET_SYMBOLS enumSymbol)`
-- **Description**: Finds asset by enum value
-- **Returns**: Pointer to `SFinancialAsset` or `NULL` if not found
-
-### Export Methods
-
-#### `string ExportToJSON()`
-- **Description**: Exports all assets in JSON format with full schema
-- **Returns**: Complete JSON string with metadata and statistics
-
-#### `string ExportToCStruct()`
-- **Description**: Exports assets as C/C++ structure definition
-- **Returns**: Ready-to-use C structure code
-
-#### `string ExportCompleteSchema()`
-- **Description**: Exports complete schema for multiple programming languages
-- **Returns**: Multi-language schema with usage examples
-
-### Analytics Methods
-
-#### `void PrintStatistics()`
-- **Description**: Prints comprehensive asset statistics to terminal
-- **Output**: Asset counts by type, total assets, etc.
-
-#### `string GetAssetTypeName(int assetType)`
-- **Description**: Converts asset type enum to readable string
-- **Returns**: String representation of asset type
-
-## 📊 Workflow
-
-### Asset Discovery Process
+### MCP-First Development Workflow
 
 ```
-┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
-│   Market    │───▶│   Symbol     │───▶│   Asset     │───▶│   Export     │
-│   Scanner   │    │   Detection  │    │   Creation  │    │   Formats    │
-└─────────────┘    └──────────────┘    └─────────────┘    └──────────────┘
-       │                   │                   │                   │
-       ▼                   ▼                   ▼                   ▼
-┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
-│  SymbolsTotal│    │  Asset Type  │    │  Serial     │    │  JSON Schema │
-│  Discovery  │    │  Detection   │    │  Assignment │    │  Generation  │
-└─────────────┘    └──────────────┘    └─────────────┘    └──────────────┘
+Entity Discovery → HOLY TREE Classification → Documentation Hyperlinking → Structure Derivation
+       ↓                    ↓                          ↓                    ↓
+ Architecture    ASCII Tree Updates    NLP Linking    Project Structure
+     Laws            Updates        Entity References    Generation
 ```
 
-### Asset Classification Logic
+### 4-Layer Architecture Flow
 
 ```
-Symbol Name ───▶ Normalization ───▶ Type Detection ───▶ Classification
-     │                 │                   │                   │
-     ▼                 ▼                   ▼                   ▼
-┌─────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
-│ EURUSD  │───▶│ SYMBOL_     │───▶│ Currency    │───▶│ FOREX        │
-│ XAUUSD  │    │ EURUSD      │    │ Check       │    │              │
-│ BTCUSD  │    │             │    │             │    │ COMMODITY    │
-│ AAPL    │    │             │    │ CRYPTO      │    │              │
-└─────────┘    └──────────────┘    └─────────────┘    └──────────────┘
+User Request → Compositional Layer → Stateful Orchestration → POD DTOs → Toolbox Functions
+      ↓               ↓                       ↓                ↓             ↓
+   Response     Business Logic     Data Contracts    Pure Logic    External I/O
+                Implementation    Cross-Language     Stateless      Through APIs
 ```
 
-## 🔍 Use Cases
-
-### 🎯 **For Algorithmic Traders**
-- **Multi-asset portfolio management**
-- **Dynamic asset allocation strategies**
-- **Cross-market correlation analysis**
-- **Automated position sizing based on asset types**
-
-### 🏢 **For Financial Institutions**
-- **Risk management system integration**
-- **Asset inventory and compliance reporting**
-- **Real-time asset monitoring and alerts**
-- **Regulatory reporting automation**
-
-### 💻 **For MQL5 Developers**
-- **Rapid prototyping with known asset universe**
-- **Consistent asset referencing across projects**
-- **Automated enum generation for type safety**
-- **Schema-compliant data export for external systems**
-
-### 📊 **For Market Analysts**
-- **Asset universe analysis and reporting**
-- **Market coverage assessment**
-- **Asset type distribution studies**
-- **Export data for external analysis tools**
-
-## 🔄 Sequence Diagram
-
-### Asset Initialization Sequence
+### Performance-First Optimization Pipeline
 
 ```
-┌─────────┐    ┌─────────────┐    ┌────────────┐    ┌─────────────┐
-│         │    │             │    │            │    │             │
-│ CIndexer│───▶│InitializeAssets│───▶│SymbolsTotal│───▶│  Asset     │
-│         │    │             │    │            │    │  Creation  │
-└─────────┘    └─────────────┘    └────────────┘    └─────────────┘
-     │                 │                   │                   │
-     ▼                 ▼                   ▼                   ▼
-┌─────────┐    ┌─────────────┐    ┌────────────┐    ┌─────────────┐
-│         │    │             │    │            │    │             │
-│  Loop   │───▶│  Asset      │───▶│  Type      │───▶│   Asset    │
-│  All    │    │  Detection  │    │  Detection │    │   Storage  │
-│ Symbols │    │             │    │            │    │             │
-└─────────┘    └─────────────┘    └────────────┘    └─────────────┘
+Memory Pools → SIMD Operations → Lock-Free Patterns → Benchmarking → Quality Gates
+      ↓            ↓                    ↓              ↓             ↓
+Pre-allocated    Vector Operations   Atomic Ops      Metrics     Enforcement
+   Buffers       Accelerated      Wait-Free         Collection   Zero Tolerance
+                                 Operations         & Analysis   For Regressions
 ```
 
-### Asset Export Sequence
+## 🔍 **Framework Integration Use Cases**
 
-```
-┌─────────┐    ┌─────────────┐    ┌────────────┐    ┌─────────────┐
-│         │    │             │    │            │    │             │
-│ Export  │───▶│  Asset      │───▶│  JSON      │───▶│  Schema    │
-│ Request │    │  Iteration  │    │  Creation  │    │  Addition  │
-└─────────┘    └─────────────┘    └────────────┘    └─────────────┘
-     │                 │                   │                   │
-     ▼                 ▼                   ▼                   ▼
-┌─────────┐    ┌─────────────┐    ┌────────────┐    ┌─────────────┐
-│         │    │             │    │            │    │             │
-│ Format  │───▶│  Metadata   │───▶│ Statistics │───▶│  Final     │
-│Selection│    │  Addition   │    │ Generation │    │  Export    │
-└─────────┘    └─────────────┘    └────────────┘    └─────────────┘
-```
+### 🎯 **For AI System Architects**
+- **Knowledge Graph Construction**: Build from Strwythura and ER data sources
+- **MCP Ecosystem Coordination**: Manage development through server orchestration
+- **Performance Optimization**: Memory pools and SIMD for production systems
+- **Cross-Language Integration**: ABI-stable DTOs across platforms
 
-## 📊 Class Diagram
+### 🏢 **For Enterprise Developers**
+- **Quality Gate Enforcement**: Zero hardcoded values through mechanical validation
+- **Multi-tier Architecture**: Clean separation across 4 sacred layers
+- **Documentation Automation**: Hyperlinked knowledge through NLP processing
+- **Production Deployment**: CMake + VCPKG + comprehensive error handling
 
-### CIndexer Class Structure
+### 💻 **For Framework Contributors**
+- **Entity Classification**: Holy Tree MCP for systematic component management
+- **Documentation Hyperlinking**: Automatic NLP-powered knowledge linking
+- **Architecture Validation**: Real-time quality gate enforcement
+- **Development Workflow**: MCP-first coordination for all activities
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        CIndexer                             │
-├─────────────────────────────────────────────────────────────┤
-│  - m_assetsMap: CHashMap<string, SFinancialAsset*>         │
-│  - m_assetsArray: CArrayObj                                 │
-│  - m_currentSerial: int                                     │
-│  - m_exportSchema: string                                   │
-├─────────────────────────────────────────────────────────────┤
-│  + CIndexer()                                               │
-│  + InitializeAssets(): bool                                 │
-│  + AddAsset(symbolName: string): bool                      │
-│  + FindAssetByName(name: string): SFinancialAsset*          │
-│  + FindAssetByEnum(enumSymbol: ENUM_MARKET_SYMBOLS): SFinancialAsset* │
-│  + ExportToJSON(): string                                   │
-│  + ExportToCStruct(): string                                │
-│  + ExportCompleteSchema(): string                           │
-│  + GenerateEnums(): string                                  │
-│  + PrintStatistics(): void                                  │
-│  + NormalizeName(name: string): string                      │
-│  + DetectAssetType(symbolName: string): ENUM_ASSET_TYPE     │
-│  + GetAssetTypeName(assetType: int): string                 │
-└─────────────────────────────────────────────────────────────┘
-```
+### 📊 **For System Integrators**
+- **Cross-Language Contracts**: Platform-independent DTO specifications
+- **Performance Benchmarking**: Comprehensive testing and optimization
+- **MCP Server Integration**: Extendable through additional server components
+- **Deployment Automation**: CMake pipeline for production builds
 
-### Supporting Types
+## 🤝 **Contributing - Join the Sacred Development**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    SFinancialAsset                          │
-├─────────────────────────────────────────────────────────────┤
-│  + serialNumber: int                                        │
-│  + assetName: string                                        │
-│  + normalizedName: string                                   │
-│  + ESymbol: ENUM_MARKET_SYMBOLS                             │
-│  + assetType: ENUM_ASSET_TYPE                               │
-│  + timestamp: datetime                                      │
-└─────────────────────────────────────────────────────────────┘
-```
+We welcome contributions following the TEN HOLY TREE COMMANDMENTS! Framework contributions require:
 
-## 🤝 Contributing
+### Development Prerequisites
+1. **Framework Architecture Study**: Understand the 4 sacred layers and 10 commandments
+2. **MCP Ecosystem Setup**: Install and configure all MCP servers
+3. **Quality Gate Compliance**: Zero violations in code analysis
+4. **Cross-Language Testing**: Validate DTO contracts across platforms
 
-We welcome contributions to the MQL5 Financial Assets Indexer! Here's how you can help:
+### Sacred Contribution Workflow
+1. **Entity Classification**: Holy Tree MCP blesses new components
+2. **Architecture Planning**: Design follows 4-layer principles
+3. **Quality Gate Validation**: CodeAnalysis MCP enforces purity
+4. **Documentation Hyperlinking**: Documentation MCP provides linking
+5. **MCP Integration Testing**: Validate server coordination
+6. **Performance Benchmarking**: Maintain optimization standards
 
-### Development Setup
+### Framework Domains for Contribution
+- **Core Orchestration**: Intent classification and pipeline routing
+- **Ingestion Pipeline**: Web data acquisition and processing
+- **Knowledge Graph**: Construction algorithms and ranking
+- **MCP Servers**: Holy Tree, Documentation, GraphRAG, CodeAnalysis
+- **Infrastructure**: Build systems, testing, deployment pipelines
 
-1. **Clone or download** the project files
-2. **Copy to MetaTrader 5** Libraries directory
-3. **Test compilation** in MetaEditor
-4. **Submit improvements** via pull requests
+### Code Standards - Sacred Commandments Compliance
+- **Commandment V**: All components follow 4-layer multi-tier architecture
+- **Commandment IX**: Quality gates enforce zero hardcoded values
+- **Commandment VI**: Static factory methods for controlled instantiation
+- **Commandment VIII**: Memory pools and SIMD for performance optimization
 
-### Contribution Areas
+## 📄 **License - MIT Sacred License**
 
-- **Asset Type Detection**: Improve classification algorithms
-- **Export Formats**: Add new export formats (XML, CSV, etc.)
-- **Performance**: Optimize asset discovery and storage
-- **Documentation**: Enhance examples and guides
-- **Testing**: Add comprehensive test cases
+This project is licensed under the MIT License - witness the sacred HOLY TREE architecture!
 
-### Code Standards
-
-- Follow MQL5 best practices and naming conventions
-- Include comprehensive comments for all public methods
-- Test all changes in MetaEditor before submitting
-- Update documentation for any API changes
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### Third-Party Libraries
-
-- **MQL5 Json Library**: Used for JSON export functionality
-- **Logify**: Used for comprehensive logging capabilities
+### Sacred Architecture Dependencies
+- **MCP Protocol**: Multi-Modal Intelligence Connect coordination
+- **DSPy Library**: LLM programming framework for RAG pipelines
+- **NetworkX**: Graph algorithms for knowledge graph processing
+- **spaCy/GLiNER**: NLP pipelines for cognitive processing
 
 ---
 
-## 📞 Support & Contact
+## 📞 **Sacred Framework Support**
 
-For questions, issues, or contributions, please:
+For questions about HOLY TREE ARCHITECTURE implementation:
 
-- **Open an issue** on GitHub for bug reports
-- **Submit a pull request** for improvements
-- **Contact the maintainers** for collaboration opportunities
+- **GitHub Issues**: Open tickets for framework questions and contributions
+- **HOLY TREE MCP**: Query sacred entity classifications and architecture
+- **Documentation MCP**: Find hyperlinked references and context
+- **GraphRAG MCP**: Get cognitive assistance for complex problems
 
 ---
 
-**Happy Trading!** 🚀📈
+**🏛️ HOLY TREE ARCHITECTURE - Ready for ROMILLM and Future Cognitive AI Systems!** ⚖️🕍🌳✨
