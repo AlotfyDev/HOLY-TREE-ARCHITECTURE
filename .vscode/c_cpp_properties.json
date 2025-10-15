@@ -1,24 +1,57 @@
 {
     "configurations": [
         {
-            "name": "MQL5",
+            "name": "HOLY TREE C++ (ROMILLM Architecture)", // 🏗️ HOLY TREE C++ Compilation Configuration
             "includePath": [
-                "${workspaceFolder}/**",
-                "C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include/**",
-                
-                "C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Libraries/**"
+                "${workspaceFolder}/**", // HOLY TREE Framework Include Path
+                "${workspaceFolder}/build/**", // Build-generated includes
+                "${workspaceFolder}/ROMILLM_Architecture/**", // HOLY TREE Architecture Documentation
+                "${workspaceFolder}/HolyTree_MCP/**", // HolyTree MCP Server Headers
+                "${workspaceFolder}/CodeAnalysisServer_MCP/**", // Code Analysis MCP Headers
+                "${workspaceFolder}/DocumentationMCP_Server/**", // Documentation MCP Headers
+                "C:/Users/${env:USERNAME}/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include/**",
+                "C:/Users/${env:USERNAME}/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Libraries/**"
             ],
             "defines": [
-                "_DEBUG",
+                "_DEBUG", // HOLY TREE Debug Builds
+                "HOLY_TREE_ARCHITECTURE", // HOLY TREE Framework Identifier
+                "ROMILLM_CORE", // ROMILLM Core Components
+                "WIN64", // Windows 64-bit Platform
+                "_WINDOWS", // Windows Platform
+                "__cplusplus", // C++ Language Mode
+                "CMAKE_BUILD", // CMake Build Environment
+                "_MBCS" // Multi-byte Character Set
+            ],
+            "compilerPath": "C:/Program Files/CMake/bin/cmake.exe",
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        },
+        {
+            "name": "HOLY TREE Release (Optimized)", // ⚡ HOLY TREE Production Configuration
+            "includePath": [
+                "${workspaceFolder}/**", // HOLY TREE Framework Path
+                "${workspaceFolder}/build/Release/**", // Release build includes
+                "${workspaceFolder}/ROMILLM_Architecture/**", // Architecture documentation
+                "C:/Users/${env:USERNAME}/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include/**"
+            ],
+            "defines": [
+                "NDEBUG", // Release/Optimized Build
+                "HOLY_TREE_PRODUCTION", // HOLY TREE Production Mode
+                "ROMILLM_RELEASE", // ROMILLM Release Configuration
                 "WIN64",
                 "_WINDOWS",
-                "_MBCS"
+                "_NDEBUG", // Disable Asserts
+                "__cplusplus"
             ],
-            "compilerPath": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+            "compilerPath": "C:/Program Files/CMake/bin/cmake.exe",
             "cStandard": "c99",
-            "cppStandard": "c++11",
+            "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64",
-            "configurationProvider": "ms-vscode.cmake-tools"
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
         }
     ],
     "version": 4

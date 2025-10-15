@@ -1,18 +1,25 @@
 {
     "recommendations": [
-        "ms-vscode.vscode-json",
-        "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools",
-        "twxs.cmake",
-        "ms-vscode.powershell",
-        "redhat.vscode-yaml",
-        "ms-vscode.vscode-json",
-        "ms-vscode-remote.remote-wsl",
-        "ms-vscode.vscode-typescript-next",
-        "l-i-v.mql-tools"
+        "ms-vscode.cpptools",                   // 🏗️ HOLY TREE C++ Development (ROMILLM Architecture)
+        "ms-vscode.cmake-tools",                // 🏗️ HOLY TREE Build System Integration
+        "twxs.cmake",                          // 🏗️ CMake Language Support
+        "ms-python.python",                    // 🐍 HOLY TREE MCP Servers (Python-based)
+        "ms-vscode.vscode-json",               // 📄 Configuration Files (JSON)
+        "redhat.vscode-yaml",                  // 📄 Pipeline & Config Files (YAML)
+        "ms-vscode.vscode-typescript-next",    // 🔍 GraphRAG MCP Server (TypeScript)
+        "ms-vscode.powershell",                // 🔧 Build Scripts & Automation
+        "ms-vscode-remote.remote-wsl",         // 🐧 Cross-Platform Development
+        "ms-vscode.vscode-json",               // 📄 Duplicate - MCP Configurations
+        "ms-toolsai.jupyter",                  // 📊 HOLY TREE Documentation Notebooks
+        "ms-python.black-formatter",           // 🐍 Python Code Formatting
+        "ms-vscode.test-adapter-converter",    // 🧪 Framework Testing Support
+        "ms-dotnettools.csharp",               // 🔧 .NET Integration Support
+        "redhat.vscode-xml",                   // 📋 XML Documentation Support
+        "GitHub.copilot-chat"                  // 🤖 Architectural AI Assistance
     ],
     "unwantedRecommendations": [
-        "ms-vscode.vscode-typescript",
-        "ms-vscode.vscode-typescript-next"
+        "ms-vscode.vscode-typescript",         // ❌ Exclude legacy TypeScript
+        "l-i-v.mql-tools",                     // ❌ Exclude MQL5 Trading Platform
+        "ms-vscode.vscode-typescript-next"     // ❌ Exclude next version conflicts
     ]
 }

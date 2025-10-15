@@ -1,15 +1,15 @@
 {
     "version": "2.0.0",
     "tasks": [
+        // 🏛️ HOLY TREE ARCHITECTURE Build Tasks
         {
-            "label": "MQL5 Compile",
+            "label": "HOLY TREE Configure",         // 🏗️ Configure HOLY TREE Build System
             "type": "shell",
-            "command": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
+            "command": "cmake",
             "args": [
-                "/compile:${file}",
-                "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
-                "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include",
-                "/log"
+                "-S", "${workspaceFolder}",
+                "-B", "${workspaceFolder}/build",
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "group": {
                 "kind": "build",
@@ -21,32 +21,194 @@
                 "focus": false,
                 "panel": "shared"
             },
-            "problemMatcher": [
-                {
-                    "pattern": [
-                        {
-                            "regexp": "^(.*)\\((\\d+)\\,(\\d+)\\)\\s*:\\s*(error|warning|note)\\s*:\\s*(.*)$",
-                            "file": 1,
-                            "line": 2,
-                            "column": 3,
-                            "severity": 4,
-                            "message": 5
-                        }
-                    ]
-                }
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "HOLY TREE Build",             // 🏗️ Build HOLY TREE Framework
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "${workspaceFolder}/build",
+                "--config", "Release",
+                "--parallel", "8"
+            ],
+            "group": "build",
+            "dependsOn": "HOLY TREE Configure",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "HOLY TREE Clean",             // 🧹 Clean HOLY TREE Build Artifacts
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "${workspaceFolder}/build",
+                "--target", "clean"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "HOLY TREE Rebuild",           // 🔄 Full HOLY TREE Rebuild
+            "type": "shell",
+            "command": "rmdir",
+            "args": [
+                "/S", "/Q", "${workspaceFolder}\\build"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+
+        // 🐍 HOLY TREE MCP Servers Tasks
+        {
+            "label": "HOLY TREE Start All MCPs",     // 🌊 Start All HOLY TREE MCP Servers
+            "type": "shell",
+            "command": "python",
+            "args": ["integration_framework.py", "--start-all"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated"
+            },
+            "dependsOn": [
+                "HOLY TREE Setup Environment"
             ]
         },
         {
-            "label": "MQL5 Compile All",
+            "label": "HOLY TREE Start HolyTree MCP", // 🏛️ Start HolyTree ASCII Parser
             "type": "shell",
-            "command": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
-            "args": [
-                "/compile:all",
-                "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
-                "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include",
-                "/log"
-            ],
+            "command": "python",
+            "args": ["HolyTree_MCP\\holy_tree_server.py", "--port", "3001"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated"
+            },
+            "dependsOn": [
+                "HOLY TREE Setup Environment"
+            ]
+        },
+        {
+            "label": "HOLY TREE Start GraphRAG MCP",  // 🔍 Start GraphRAG Cognitive Intelligence
+            "type": "shell",
+            "command": "cd",
+            "args": ["GraphRagMcpServer", "&&", "npm", "start"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated"
+            },
+            "dependsOn": [
+                "HOLY TREE Setup Environment"
+            ]
+        },
+        {
+            "label": "HOLY TREE Start Documentation MCP", // 📄 Start Documentation Hyperlinker
+            "type": "shell",
+            "command": "python",
+            "args": ["DocumentationMCP_Server\\documentation_server.py", "--port", "3002"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated"
+            },
+            "dependsOn": [
+                "HOLY TREE Setup Environment"
+            ]
+        },
+        {
+            "label": "HOLY TREE Start CodeAnalysis MCP", // 🔍 Start Code Analysis MCP
+            "type": "shell",
+            "command": "python",
+            "args": ["CodeAnalysisServer_MCP\\mcp_server.py", "--port", "3003"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated"
+            },
+            "dependsOn": [
+                "HOLY TREE Setup Environment"
+            ]
+        },
+
+        // 🏗️ HOLY TREE Environment Setup Tasks
+        {
+            "label": "HOLY TREE Setup Environment",     // 🐍 Setup HOLY TREE Python Environment
+            "type": "shell",
+            "command": "python",
+            "args": ["-m", "venv", "${workspaceFolder}/.venv"],
             "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            },
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "HOLY TREE Install Dependencies",   // 📦 Install HOLY TREE Dependencies
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/Scripts/pip.exe",
+            "args": ["install", "-r", "requirements.txt"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "dependsOn": [
+                "HOLY TREE Setup Environment"
+            ]
+        },
+
+        // 📊 HOLY TREE Framework Tests
+        {
+            "label": "HOLY TREE Test Framework",       // 🧪 Test HOLY TREE Framework
+            "type": "shell",
+            "command": "python",
+            "args": ["-m", "pytest", "tests/", "-v"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": "$python"
+        },
+        {
+            "label": "HOLY TREE Demo Framework",       // 🎯 Run HOLY TREE Demos
+            "type": "shell",
+            "command": "python",
+            "args": ["demo_framework.py"],
+            "group": "test",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -54,16 +216,14 @@
                 "panel": "shared"
             }
         },
+
+        // 📋 HOLY TREE Documentation Tasks
         {
-            "label": "MQL5 Validate Syntax",
+            "label": "HOLY TREE Update Documentation",  // 📚 Update HOLY TREE Docs
             "type": "shell",
-            "command": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
-            "args": [
-                "/validate:${file}",
-                "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
-                "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include"
-            ],
-            "group": "test",
+            "command": "python",
+            "args": ["hyperlinked_docs\\update_docs.py"],
+            "group": "build",
             "presentation": {
                 "echo": true,
                 "reveal": "silent",

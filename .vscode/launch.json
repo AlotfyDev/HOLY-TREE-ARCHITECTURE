@@ -1,16 +1,13 @@
 {
    "version": "0.2.0",
    "configurations": [
+       // 🏗️ HOLY TREE C++ Debugging (ROMILLM Core)
        {
-           "name": "MQL5 Debug Current File",
+           "name": "HOLY TREE Debug C++ (gdb)",       // Debugging HOLY TREE C++ Components
            "type": "cppdbg",
            "request": "launch",
-           "program": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
-           "args": [
-               "/debug:${file}",
-               "/inc:C:/Program Files/MetaTrader 5 EXNESS/MQL5/Include",
-               "/inc:C:/Users/Ahmed/AppData/Roaming/MetaQuotes/Terminal/53785E099C927DB68A545C249CDBCE06/MQL5/Include"
-           ],
+           "program": "${workspaceFolder}/build/bin/Release/TradingRagSystem.exe",
+           "args": ["--debug"],
            "stopAtEntry": false,
            "cwd": "${workspaceFolder}",
            "environment": [],
@@ -24,19 +21,166 @@
                    "ignoreFailures": true
                }
            ],
-           "preLaunchTask": "MQL5 Compile"
+           "preLaunchTask": "HOLY TREE Build"
        },
        {
-           "name": "MQL5 Launch MetaEditor",
+           "name": "HOLY TREE Launch Trading System",  // Launch HOLY TREE Trading System
            "type": "cppdbg",
            "request": "launch",
-           "program": "C:/Program Files/MetaTrader 5 EXNESS/MetaEditor64.exe",
-           "args": [],
+           "program": "${workspaceFolder}/build/bin/Release/TradingRagSystem.exe",
+           "args": ["--production"],
            "stopAtEntry": false,
-           "cwd": "C:/Program Files/MetaTrader 5 EXNESS",
+           "cwd": "${workspaceFolder}",
            "environment": [],
            "externalConsole": true,
-           "MIMode": "gdb"
+           "MIMode": "gdb",
+           "miDebuggerPath": "C:/mingw64/bin/gdb.exe"
+       },
+
+       // 🐍 HOLY TREE MCP Python Debugging
+       {
+           "name": "HOLY TREE Debug HolyTree MCP",    // Debug HolyTree ASCII Parser
+           "type": "debugpy",
+           "request": "launch",
+           "program": "${workspaceFolder}/HolyTree_MCP/holy_tree_server.py",
+           "args": ["--port", "3001", "--debug"],
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+       {
+           "name": "HOLY TREE Debug Documentation MCP", // Debug Documentation Hyperlinker
+           "type": "debugpy",
+           "request": "launch",
+           "program": "${workspaceFolder}/DocumentationMCP_Server/documentation_server.py",
+           "args": ["--port", "3002", "--debug"],
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+       {
+           "name": "HOLY TREE Debug CodeAnalysis MCP", // Debug Code Analysis MCP
+           "type": "debugpy",
+           "request": "launch",
+           "program": "${workspaceFolder}/CodeAnalysisServer_MCP/mcp_server.py",
+           "args": ["--port", "3003", "--debug"],
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+       {
+           "name": "HOLY TREE Debug Integration Framework", // Debug MCP Integration Framework
+           "type": "debugpy",
+           "request": "launch",
+           "program": "${workspaceFolder}/integration_framework.py",
+           "args": ["--debug"],
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+
+       // 🔍 HOLY TREE GraphRAG TypeScript Debugging (Node.js)
+       {
+           "name": "HOLY TREE Debug GraphRAG MCP",   // Debug GraphRAG Cognitive Intelligence
+           "type": "node",
+           "request": "launch",
+           "program": "${workspaceFolder}/GraphRagMcpServer/src/index.ts",
+           "cwd": "${workspaceFolder}/GraphRagMcpServer",
+           "outFiles": ["${workspaceFolder}/GraphRagMcpServer/dist/**/*.js"],
+           "preLaunchTask": "npm: build",
+           "sourceMaps": true,
+           "smartStep": true,
+           "console": "integratedTerminal"
+       },
+       {
+           "name": "HOLY TREE Launch GraphRAG MCP",   // Launch GraphRAG MCP Production
+           "type": "node",
+           "request": "launch",
+           "program": "${workspaceFolder}/GraphRagMcpServer/dist/index.js",
+           "cwd": "${workspaceFolder}/GraphRagMcpServer",
+           "console": "integratedTerminal",
+           "outputCapture": "std"
+       },
+
+       // 📚 HOLY TREE Framework Testing
+       {
+           "name": "HOLY TREE Test Framework",        // Test HOLY TREE Framework Components
+           "type": "debugpy",
+           "request": "launch",
+           "module": "pytest",
+           "args": ["tests/", "-v", "--tb=short"],
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+       {
+           "name": "HOLY TREE Test Integration",      // Test HOLY TREE MCP Integration
+           "type": "debugpy",
+           "request": "launch",
+           "module": "pytest",
+           "args": ["tests/test_integration.py", "-v", "--tb=short"],
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+
+       // 🎯 HOLY TREE Framework Demos
+       {
+           "name": "HOLY TREE Run Add Entity Demo",   // Run Entity Management Demo
+           "type": "debugpy",
+           "request": "launch",
+           "program": "${workspaceFolder}/demo_add_entity.py",
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+       {
+           "name": "HOLY TREE Run HolyTree Deletion Demo", // Run Framework Deletion Demo
+           "type": "debugpy",
+           "request": "launch",
+           "program": "${workspaceFolder}/demo_holy_tree_deletion.py",
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}"
+           }
+       },
+
+       // 🔧 HOLY TREE Development Tools
+       {
+           "name": "HOLY TREE Memory Profiling",      // Debug HOLY TREE Memory Usage
+           "type": "debugpy",
+           "request": "launch",
+           "program": "${workspaceFolder}/profile_memory.py",
+           "console": "integratedTerminal",
+           "justMyCode": false,
+           "cwd": "${workspaceFolder}",
+           "env": {
+               "PYTHONPATH": "${workspaceFolder}",
+               "PYTHONPROFILE": "1"
+           }
        }
    ]
 }

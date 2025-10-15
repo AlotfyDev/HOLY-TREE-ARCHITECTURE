@@ -1,15 +1,57 @@
 {
     "files.associations": {
-        "*.mqh": "cpp",
-        "*.mql": "cpp",
-        "*.mq5": "cpp",
-        "*.mq4": "cpp"
+        // 🏛️ HOLY TREE ARCHITECTURE File Associations
+        "*.cpp": "cpp",                       // HOLY TREE C++ Source Files (ROMILLM Core)
+        "*.hpp": "cpp",                       // HOLY TREE C++ Headers (ROMILLM Interfaces)
+        "*.py": "python",                     // HOLY TREE MCP Servers & Framework Scripts
+        "*.ts": "typescript",                 // GraphRAG MCP Server (TypeScript)
+        "*.json": "json",                     // MCP Configurations & Framework Settings
+        "*.yaml": "yaml",                     // Pipeline Configurations & Strwythura Configs
+        "*.toml": "toml",                     // Strwythura Project Configurations
+        "*.md": "markdown",                   // HOLY TREE Documentation & Architecture Guides
+        "*.sh": "shellscript",                // Build Scripts & Development Tools
+        "*.ps1": "powershell",                // Windows Build Automation
+        "*.cmake": "cmake",                   // HOLY TREE Build System Files
+        "*.cmake.in": "cmake"                 // CMake Template Files
     },
-    
+
+    // 🏗️ HOLY TREE C++ Development Configuration
     "C_Cpp.default.configurationProvider": "llvm-vs-code-extensions.vscode-clangd",
     "C_Cpp.intelliSenseEngine": "default",
     "C_Cpp.intelliSenseEngineFallback": "enabled",
     "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.dimInactiveRegions": false,
-    "C_Cpp.loggingLevel": "Information"
+    "C_Cpp.loggingLevel": "Information",
+
+    // 🐍 HOLY TREE Python Development Configuration
+    "python.defaultInterpreterPath": ".venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+
+    // 🏗️ HOLY TREE Build System Configuration
+    "cmake.configureOnOpen": true,
+    "cmake.configureArgs": [
+        "-DCMAKE_BUILD_TYPE=Release"
+    ],
+
+    // 🔍 HOLY TREE Workspace Search Configuration
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/build": true,
+        "**/__pycache__": true,
+        "**/dist": true,
+        "**/GraphRagMcpServer/node_modules": true
+    },
+
+    // 📄 HOLY TREE Editor Configuration
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+
+    // 🧪 HOLY TREE Testing Configuration
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false
 }
