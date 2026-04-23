@@ -28,7 +28,7 @@
     "better-sqlite3": "^9.4.3",
     "glob": "^10.3.10",
     "winston": "^3.13.0",
-    "uuid": "^9.0.1"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
